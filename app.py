@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg') 
 import seaborn as sns
-
+import streamlit as st
 # Your Flask app code here
 
 
@@ -163,7 +163,7 @@ def index():
     plot_sleep_duration_boxplot()
     return render_template('plottings.html')
 
-import streamlit as st
+
 
 # Define your Streamlit app code here
 
