@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep Health Resources</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .custom-bg1 {
+    background-color: #FFE6E6; /* Custom color for the first row */
+  }
+
+  .custom-bg2 {
+    background-color: #6DA7DE; /* Custom color for the second row */
+  }
+
+  .custom-bg3 {
+    background-color: #FFBE98; /* Custom color for the third row */
+  }
+
+  .custom-bg4 {
+    background-color: #7F9F80; /* Custom color for the fourth row */
+  }
+
+  .custom-bg5 {
+    background-color: #FFB5DA; /* Custom color for the fifth row */
+  }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F7EEDD;
+      color: #343a40;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .video-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 200px;
+    }
+    /* Custom Navbar Styles */
+    .navbar {
+        background-color: #0056b3;
+    }
+    .navbar-brand {
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .navbar-nav .nav-link {
+        color: #fff;
+        font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="/">Sleep Disorder Predictor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" href="/datasetDesc">Dataset Description</a>
+            <a class="nav-item nav-link" href="/predict">Predict</a>
+            <a class="nav-item nav-link" href="/plots">Graphs&Plots</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <!-- <h1 class="text-center mb-4">Understanding Sleep Disorders and Remedies</h1> -->
+    <div class="row justify-content-center">
+
+      <!-- Content Section -->
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <!-- JavaScript will populate content here -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Determine the condition result (Insomnia, Sleep Apnea, Healthy) here
+    var conditionResult = "{{ predicted_sleep_disorder }}"; // Example condition result, replace with your actual logic
+
+    // Define content for Insomnia
+    var insomniaContent = `
+      <h3 class="text-center mb-4">You are experiencing symptoms of <u><b>Insomnia</b></u>.</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><b>Insomnia - Diagnosis and treatment</b></h5>
+              <p class="card-text">Cognitive behavioral therapy for insomnia can help you control or stop negative thoughts and actions that keep you awake. It's usually recommended as the first treatment for people with insomnia. Typically, CBT is as effective or more effective than sleep medicines..</p>
+              <a href="https://www.mayoclinic.org/diseases-conditions/insomnia/diagnosis-treatment/drc-20355173#:~:text=Changing%20sleep%20habits%20and%20taking,to%20improve%20relaxation%20and%20sleep." class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Insomnia Treatment</h5>
+              <p class="card-text">Follow a routine that helps you wind down and relax before bed. For example, read a book, listen to soothing music, or take a hot bath. Your doctor may also recommend massage therapy, meditation, or yoga to help you relax. Acupuncture may also help improve insomnia, especially in older adults..</p>
+              <a href="https://www.nhlbi.nih.gov/health/insomnia/treatment#:~:text=Follow%20a%20routine%20that%20helps,insomnia%2C%20especially%20in%20older%20adults." class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="video-container">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CEzHE4pmLTk?feature=shared"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="video-container">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cHKs2aVxOmQ?feature=shared"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="video-container">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fOcJCXZwW-I?feature=shared"></iframe>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Define content for Sleep Apnea
+    var sleepApneaContent = `
+      <h2 class="text-center mb-4">You are experiencing symptoms of <u><b>Sleep Apnea</b></u>.</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><u>Sleep apnea - Diagnosis and treatment</u></h5>
+              <p class="card-text">or milder cases of sleep apnea, your health care provider may recommend only lifestyle changes, such as losing weight or quitting smoking. You may need to change the position in which you sleep. If you have nasal allergies, your provider may recommend treatment for your allergies.....</p>
+              <a href="https://www.mayoclinic.org/diseases-conditions/sleep-apnea/diagnosis-treatment/drc-20377636" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><u>Sleep Apnea: What It Is, Causes, Symptoms & Treatment</u></h5>
+              <p class="card-text">Sleep apnea is a disorder that causes you to stop breathing while asleep. Your brain tries to protect you by waking you up enough to breathe, but this prevents restful, healthy sleep. Over time, this condition can cause serious complications....</p>
+              <a href="https://my.clevelandclinic.org/health/diseases/8718-sleep-apnea" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="video-container">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bXrDZ-1A2q4?feature=shared"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="video-container">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IMON9zmViu4?feature=shared"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="video-container">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nbWEbzHWA_U?feature=shared"></iframe>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Display content based on condition result
+    var contentDiv = document.querySelector('.card-body');
+    if (conditionResult === "Insomnia") {
+      contentDiv.innerHTML = insomniaContent;
+    } 
+    else if (conditionResult === "Sleep Apnea") {
+      contentDiv.innerHTML = sleepApneaContent;
+    } else {
+      contentDiv.innerHTML = `
+    <div class="text-center">
+        <h2 class="mb-4">Healthy Sleep</h2>
+        <p>You are healthy!</p>
+        <p>Here are some tips for maintaining healthy sleep:</p>
+        <ul class="list-group list-group-flush text-left">
+            <li class="list-group-item custom-bg1 text-black">Stick to a consistent sleep schedule</li>
+            <li class="list-group-item custom-bg2 text-white">Create a relaxing bedtime routine</li>
+            <li class="list-group-item custom-bg3 text-black">Ensure your sleep environment is comfortable and conducive to sleep</li>
+            <li class="list-group-item custom-bg4 text-white">Limit exposure to screens before bedtime</li>
+            <li class="list-group-item custom-bg5 text-black">Avoid caffeine and heavy meals close to bedtime</li>
+        </ul>
+    </div>
+`;
+
+// Add Bootstrap classes for styling
+contentDiv.classList.add('container', 'mt-5');
+contentDiv.querySelectorAll('p').forEach(p => p.classList.add('mb-3'));
+contentDiv.querySelector('h2').classList.add('font-weight-bold', 'text-primary');
+
+    }
+  </script>
+</body>
+</html>

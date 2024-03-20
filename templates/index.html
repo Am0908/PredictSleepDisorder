@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Disorder Predictor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F7EEDD;
+            color: #343a40;
+        }
+        .navbar {
+            background-color: #0056b3;
+        }
+        .navbar-brand {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+        }
+        .jumbotron {
+            background-color: #007bff;
+            color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .jumbotron h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .jumbotron p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background-color: #004080;
+            border-color: #004080;
+        }
+        .features {
+            margin-top: 215px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 48px;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        .feature-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .feature-description {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">Sleep Disorder Predictor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/datasetDesc">Dataset Description</a>
+                <a class="nav-item nav-link" href="/predict">Predict</a>
+                <a class="nav-item nav-link" href="/plots">Graphs&Plots</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome to Sleep Disorder Predictor</h1>
+            <p>Predict whether you have a sleep disorder</p>
+            <hr class="my-4">
+            <p>This app helps you determine whether you have a sleep disorder based on your input data.</p>
+            <a class="btn btn-primary btn-lg" href="/predict" role="button">Get Started</a>
+        </div>
+
+        <div class="features">
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="fa fa-clock-o feature-icon"></i>
+                    <h2 class="feature-title">Quick Results</h2>
+                    <p class="feature-description">Get instant predictions for sleep disorders.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fa fa-database feature-icon"></i>
+                    <h2 class="feature-title">Large Dataset</h2>
+                    <p class="feature-description">Our model is trained on a vast dataset for accurate predictions.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fa fa-line-chart feature-icon"></i>
+                    <h2 class="feature-title">Advanced Algorithms</h2>
+                    <p class="feature-description">Utilizes state-of-the-art algorithms for robust predictions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
