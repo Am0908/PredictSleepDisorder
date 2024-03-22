@@ -94,74 +94,10 @@ def predict():
         return render_template('result.html', predicted_sleep_disorder=prediction_result)
 
 
-@app.route('/datasetDesc')
-def descdataset():
-    # Load your data and perform necessary preprocessing
-    df = pd.read_csv('Sleep_health_and_lifestyle_dataset.csv')
-    
-    # Apply table styles to the first 10 rows
-    styled_df = df.style.set_table_styles([
-        {'selector': 'th', 'props': [('border', '1px solid #ddd'), ('font-size', '10pt')]},
-        {'selector': 'td', 'props': [('border', '1px solid #ddd'), ('font-size', '10pt')]},
-        {'selector': 'tr:nth-of-type(odd)', 'props': [('background-color', 'lightsteelblue')]}
-    ])
-    
-    # Render the HTML representation of the styled DataFrame
-    styled_html = styled_df.render()
-    
-    return render_template('dataset.html', styled_html=styled_html)
-
-
-# Load your data
-data = pd.read_csv('Sleep_health_and_lifestyle_dataset.csv')  
-
-# Define your plotting functions
-def plot_categorical_distribution():
-    fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(16, 5))
-    for i, var in enumerate(['Gender', 'BMI Category', 'Sleep Disorder']):
-        col = i
-        order = data[var].value_counts().index
-        sns.countplot(x=var, data=data, ax=axes[col], order=order)    
-        axes[col].set_title(f'Distribution of {var}', fontsize=14)
-        axes[col].set_xlabel(var, fontsize=12)
-        axes[col].set_ylabel('Count', fontsize=12)
-        axes[col].set_xticklabels(axes[col].get_xticklabels(), rotation=45)
-    plt.tight_layout()
-    plt.savefig('static/categorical_distribution.png')
-
-def plot_occupational_distribution():
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
-    order = data['Occupation'].value_counts().index
-    sns.countplot(x='Occupation', data=data, ax=ax1, order=order)
-    ax1.set_title('Distribution of Occupations', fontsize=14)
-    ax1.set_xlabel('Occupation', fontsize=12)
-    ax1.set_ylabel('Count', fontsize=12)
-    ax1.set_xticklabels(ax1.get_xticklabels(), rotation=45)
-    
-    occup_dis = data.groupby('Occupation')['Sleep Disorder'].value_counts(normalize=True).unstack().sort_values(by='None', ascending=False)
-    order_sleep_disorder = ['None', 'Sleep Apnea', 'Insomnia']
-    occup_dis[order_sleep_disorder].plot(kind='barh', stacked=True, ax=ax2)
-    ax2.set_title('Sleep Disorder per Occupation', fontsize=14)
-    ax2.set_xlabel('Proportions', fontsize=12)
-    ax2.set_ylabel('Occupation', fontsize=12)
-    plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=3)
-    plt.tight_layout()
-    plt.savefig('static/occupational_distribution.png')
-
-def plot_sleep_duration_boxplot():
-    plt.figure(figsize=(10, 5)) 
-    sns.boxplot(data=data,y='Sleep Duration', x='Occupation')
-    plt.xticks(rotation=90)
-    plt.tight_layout()
-    plt.savefig('static/sleep_duration_boxplot.png')
-
 # Route for rendering the HTML template
-@app.route('/plots')
+@app.route('/about')
 def index():
-    plot_categorical_distribution()
-    plot_occupational_distribution()
-    plot_sleep_duration_boxplot()
-    return render_template('plottings.html')
+    return render_template('About.html')
 
 
 
