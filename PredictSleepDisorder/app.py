@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg') 
 import seaborn as sns
-import streamlit as st
 # Your Flask app code here
 
 
