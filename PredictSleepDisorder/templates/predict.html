@@ -116,15 +116,17 @@
         <form action="/predict" method="post">
             <label for="Gender">Gender:</label>
             <select id="Gender" name="Gender" required>
+                <option value="" disabled selected>Select Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
             
             <label for="Age">Age:</label>
-            <input type="number" id="Age" name="Age" required>
+            <input type="number" id="Age" name="Age" required placeholder="Enter your age">
     
             <label for="Occupation">Occupation:</label>
             <select id="Occupation" name="Occupation" required>
+                <option value="" disabled selected>Select Occupation</option>
                 <option value="Doctor">Doctor</option>
                 <option value="Sales Representative">Sales Representative</option>
                 <option value="Software Engineer">Software Engineer</option>
@@ -139,18 +141,19 @@
             </select>
             
             <label for="Sleep Duration">Sleep Duration(In Hours):</label>
-            <input type="number" id="Sleep Duration" name="Sleep Duration" required>
+            <input type="number" id="Sleep Duration" name="Sleep Duration" required placeholder="Enter sleep duration">
     
             <label for="Quality of Sleep">Quality of Sleep (1-10):</label>
-            <input type="number" id="Quality of Sleep" name="Quality of Sleep" min="1" max="10" required>
+            <input type="number" id="Quality of Sleep" name="Quality of Sleep" min="1" max="10" required placeholder="Enter sleep quality">
     
             <label for="Physical Activity Level">Physical Activity Level (In Minutes):</label>
-            <input type="number" id="Physical Activity Level" name="Physical Activity Level" required>
+            <input type="number" id="Physical Activity Level" name="Physical Activity Level" required placeholder="Enter physical activity level">
     
             <label for="Stress Level">Stress Level (1-10):</label>
-            <input type="number" id="Stress Level" name="Stress Level" required>
+            <input type="number" id="Stress Level" name="Stress Level" required placeholder="Enter stress level">
     
             <label for="BMI Category">BMI Category:</label>
+            <option value="" disabled selected>Select BMI Category</option>
             <select id="BMI Category" name="BMI Category" required>
                 <option value="Obese">Obese</option>
                 <option value="Normal">Normal</option>
@@ -158,16 +161,16 @@
             </select>
             
             <label for="Heart Rate">Heart Rate:</label>
-            <input type="number" id="Heart Rate" name="Heart Rate" required>
+            <input type="number" id="Heart Rate" name="Heart Rate" required placeholder="Enter heart rate">
     
             <label for="Daily Steps">Daily Steps:</label>
-            <input type="number" id="Daily Steps" name="Daily Steps" required>
+            <input type="number" id="Daily Steps" name="Daily Steps" required placeholder="Enter daily steps">
     
             <label for="Systolic">Systolic:</label>
-            <input type="number" id="Systolic" name="Systolic" required>
+            <input type="number" id="Systolic" name="Systolic" required placeholder="Enter systolic value">
     
             <label for="Diastolic">Diastolic:</label>
-            <input type="number" id="Diastolic" name="Diastolic" required>
+            <input type="number" id="Diastolic" name="Diastolic" required placeholder="Enter diastolic value">
     
             <input type="submit" value="Predict">
         </form>
