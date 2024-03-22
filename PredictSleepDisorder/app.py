@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg') 
 import seaborn as sns
-
+import streamlit as st
 # Your Flask app code here
 
 
@@ -164,5 +164,13 @@ def index():
     return render_template('plottings.html')
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+# Define your Streamlit app code here
+
+if __name__ == "__main__":
+    try:
+        # Run your Streamlit app
+        app.run(debug=True)
+    except Exception as e:
+        # Handle any exceptions that occur during execution
+        st.error("An error occurred: {}".format(str(e)))

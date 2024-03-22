@@ -1,0 +1,5 @@
+Flask
+matplotlib
+seaborn
+scikit-learn
+streamlit
